@@ -1,0 +1,12 @@
+const express = require('express');
+const { createUser, userSignIn, checkUser, updateUserById } = require('../controllers/userController');
+const auth = require('../middleware/authorization')
+
+const userRouter = express.Router();
+
+userRouter.post('/registro', createUser);
+userRouter.post('/iniciar-sesion', userSignIn);
+userRouter.get('/verificar-usuario', auth, checkUser);
+userRouter.put('/actualizar-usuario/:id', updateUserById);
+
+module.exports = userRouter
