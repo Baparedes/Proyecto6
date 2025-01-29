@@ -32,3 +32,13 @@ Endpoints Principales Productos:
 - GET /api/product/obtener-productos
 - POST /api/product/crear-producto
     - Body: { nombre, descripcion, categoria, precio }
+
+Tecnologías usadas:
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- JSON Web Tokens (jsonwebtoken)
+- Bcrypt.js
+- Cors
+- Dotenv
