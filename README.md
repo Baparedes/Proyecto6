@@ -42,3 +42,6 @@ Tecnologías usadas:
 - Bcrypt.js
 - Cors
 - Dotenv
+
+URL del proyecto levantado en Render:
+https://proyecto6-iptn.onrender.com
