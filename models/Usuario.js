@@ -1,5 +1,7 @@
+// Importación de librería necesaria
 const mongoose = require("mongoose");
 
+// Creación del esquema Usuario
 const userSchema = mongoose.Schema(
   {
     username: {
@@ -21,4 +23,5 @@ const userSchema = mongoose.Schema(
 
 const Usuario = mongoose.model("Usuario", userSchema);
 
+// Exportación del modelo
 module.exports = Usuario;

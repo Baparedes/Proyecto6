@@ -1,5 +1,7 @@
+// Importación de librería necesaria
 const mongoose = require("mongoose");
 
+// Creación del esquema Producto
 const productSchema = mongoose.Schema(
   {
     nombre: {
@@ -26,4 +28,5 @@ const productSchema = mongoose.Schema(
 
 const Product = mongoose.model('Producto', productSchema);
 
+// Exportación del modelo
 module.exports = Product;

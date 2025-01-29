@@ -1,7 +1,9 @@
+// Importación de librerías y del modelo Usuario
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/Usuario");
 
+// Creación de usuario
 exports.createUser = async (req, res) => {
   const { username, email, password } = req.body;
   try {
@@ -19,6 +21,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
+// Inicio de sesión
 exports.userSignIn = async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -54,6 +57,7 @@ exports.userSignIn = async (req, res) => {
   }
 };
 
+// Verificación de usuario
 exports.checkUser = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -65,6 +69,7 @@ exports.checkUser = async (req, res) => {
   }
 };
 
+// Actualización de usuario por su id
 exports.updateUserById = async (req, res) => {
   try {
     const { id } = req.params;

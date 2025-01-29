@@ -1,3 +1,4 @@
+// Importación de librerías necesarias y controladores
 const express = require("express");
 const {
   getAllProducts,
@@ -15,4 +16,5 @@ productRouter.get("/obtener-producto/:id", getOneProductById);
 productRouter.put("/actualizar-producto/:id", updateProductById);
 productRouter.delete("/eliminar-producto/:id", deleteProductById);
 
+// Exportación de rutas
 module.exports = productRouter;

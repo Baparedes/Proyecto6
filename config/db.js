@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Conexión a base de datos en la nube (MongoDB Atlas)
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);

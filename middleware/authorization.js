@@ -1,5 +1,7 @@
+// Importación JWT para la creación del token
 const jwt = require("jsonwebtoken");
 
+// Creación del middleware de autorización
 module.exports = (req, res, next) => {
   let { authorization } = req.headers;
 

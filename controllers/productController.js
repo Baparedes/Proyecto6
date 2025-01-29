@@ -1,10 +1,11 @@
+// Importación del modelo Producto
 const Product = require("../models/Producto");
 
-// Obtener todos los productos
+// Obtención de todos los productos
 exports.getAllProducts = async (req, res) => {
   try {
     const products = await Product.find({});
-    return res.json({ Products: products });
+    return res.json({ Productos: products });
   } catch (error) {
     return res
       .status(500)
@@ -12,20 +13,20 @@ exports.getAllProducts = async (req, res) => {
   }
 };
 
-// Crear un producto
+// Creación de un producto
 exports.createProduct = async (req, res) => {
   try {
     const {
       nombre,
       descripcion,
-      categoria, // Puede ser "Hardware", "Software" o "Servicios Profesionales"
-      precio, // Tarifa establecida en USD
+      categoria, // Puede ser sólo "Hardware", "Software" o "Servicios profesionales"
+      precio // Tarifa establecida en USD (dólares estadounidenses)
     } = req.body;
     const newProduct = await Product.create({
       nombre,
       descripcion,
       categoria,
-      precio,
+      precio
     });
     res.json({ newProduct });
   } catch (error) {
@@ -35,7 +36,7 @@ exports.createProduct = async (req, res) => {
   }
 };
 
-// Obtener un producto por su id
+// Obtención de un producto por su id
 exports.getOneProductById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -46,7 +47,7 @@ exports.getOneProductById = async (req, res) => {
   }
 };
 
-// Actualizar el producto por su id
+// Actualización del producto por su id
 exports.updateProductById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -57,7 +58,7 @@ exports.updateProductById = async (req, res) => {
         nombre,
         descripcion,
         categoria,
-        precio,
+        precio
       },
       { new: true }
     );
@@ -69,7 +70,7 @@ exports.updateProductById = async (req, res) => {
   }
 };
 
-// Eliminar producto por su id
+// Eliminación de producto por su id
 exports.deleteProductById = async (req, res) => {
   try {
     const { id } = req.params;
